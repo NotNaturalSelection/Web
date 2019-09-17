@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Веб-программирование</title>
+    <style>
+        body{
+            background-color: white;
+        }
+        header{
+            text-align: center;
+            margin: auto;
+            font-family: Arial, cursive;
+            font-style: italic;
+            font-size: 45px;
+        }
+        .function{
+            margin-top: 1%;
+            box-shadow: 0 0 5px 2px grey;
+            background-color: #f6f6f6;
+            text-align: center;
+            float: left;
+            width: 80%;
+            height: auto;
+            margin-left: 10%;
+            margin-right: 10%;
+            border: 3px solid grey;
+            border-radius: 50px;
+
+        }
+        select{
+            box-shadow: 0 0 2px 1px grey;
+            border-style: outset;
+            align-self: center;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-width: 2px;
+            height: 30px;
+            width: 50px;
+            background-color: lightgray;
+            border-color: lightgray;
+            border-radius: 7px;
+        }
+        #textarea{
+            box-shadow: 0 0 2px 1px grey;
+            border-width: 2px;
+            border-color: lightgray;
+            border-style: outset;
+            height: 30px;
+            background-color: lightgray;
+            width: 50px;
+            align-self: center;
+            text-align: center;
+            border-radius: 7px;
+        }
+        #Y{
+            vertical-align: center;
+        }
+        button{
+            box-shadow: 0 0 2px 1px grey;
+            border-width: 2px;
+            border-color: lightgray;
+            align-self: center;
+            height: 30px;
+            background-color: lightgray;
+            border-radius: 7px;
+            width: 50px;
+        }
+        #accept{
+            box-shadow: 0 0 2px 1px grey;
+            border-width: 2px;
+            border-color: lightgray;
+            border-style: outset;
+            align-self: center;
+            background-color: lightgray;
+            border-radius: 7px;
+            height: 30px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript" src="JSscript.js"></script>
+<header>Окишор Александр. Группа Р3200. Вариант 200016.</header>
+<main>
+    <form action="add.php" method="get">
+        <div class="function" ><p>Область определения функции</p>
+            <p><img src="вырезать.png"></p>
+            <p>Координата X</p>
+            <p>
+                <select name="X" id="X">
+                    <option value="-4">-4</option>
+                    <option value="-3">-3</option>
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </p>
+            <p>Координата Y</p>
+            <label for="textarea"></label><input type="text" placeholder="-5...5" name="textarea" id="textarea" onchange="textAreaHandler()">
+            <p>Значение Y:</p>
+            <p id="Y">?</p>
+            <p>Координата R</p>
+            <button type="button" onclick="set1()" name="button1" id="button1" value="1">1</button>
+            <button type="button" onclick="set2()" name="button2" id="button2" value="2">2</button>
+            <button type="button" onclick="set3()" name="button3" id="button3" value="3">3</button>
+            <button type="button" onclick="set4()" name="button4" id="button4" value="4">4</button>
+            <button type="button" onclick="set5()" name="button5" id="button5" value="5">5</button>
+            <textarea name="R" id="R" cols="1" rows="1" maxlength="1" hidden readonly>?</textarea>
+            <p><input type="button" id="accept" onclick="textAreaCheck()" value="Применить"></p>
+
+        </div>
+    </form>
+</main>
+</body>
+</html>

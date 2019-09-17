@@ -1,0 +1,26 @@
+body{
+    background: url(textile-2918844_1920.jpg)
+}
+header{
+
+    font-family: Arial;
+    font-size: 45px;
+}
+.function{
+    float: left;
+    width: 45%;
+    height: auto;
+    margin-left: 3%;
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+    border: 3px solid #fff;
+    border-radius: 5px
+}
+.result{
+    float: right;
+    width: 45%;
+    height: auto;
+    margin-right: 3%;
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+    border: 3px solid #fff;
+    border-radius: 5px
+}
