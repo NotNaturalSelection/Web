@@ -6,19 +6,16 @@ function textAreaCheck() {
     }
     let $readyY = false;
     let $readyR = false;
-        if (!isNaN(elem)) {
-            let e = Number(elem);
-            if (e > 5 || e < -5) {
-                document.getElementById("Y").innerText = "Данные не попадают в допустимые пределы"
-            } else {
-                if(elem !== "") {
-                    document.getElementById("Y").innerText = elem;
-                    $readyY = true;
-                }
-            }
+    if (!isNaN(elem) & elem.length > 0) {
+        let e = Number(elem);
+        if (e > 5 || e < -5) {
+            document.getElementById("Y").innerText = "Предупреждение: данные не попадают в допустимые пределы"
         } else {
-            document.getElementById("Y").innerText = "Данные некорректны"
+            $readyY = true;
         }
+    } else {
+        document.getElementById("Y").innerText = "Предупреждение: данные заданы некорректно"
+    }
 
     if(document.getElementById("R").innerText === "?"){
         document.getElementById("R").innerText = "?"
@@ -26,7 +23,7 @@ function textAreaCheck() {
         $readyR = true
     }
     if($readyY && $readyR) {
-        document.getElementById("accept").setAttribute("type", "submit")
+        this.fun.submit();
     }
 }
 
@@ -88,10 +85,11 @@ function textAreaHandler() {
         document.getElementById("textarea").style = "background-color: #ff8282;"
     }else{
         if(document.getElementById("textarea").value !== "") {
-            document.getElementById("textarea").style = "background-color: lightblue;"
+            document.getElementById("textarea").style = "background-color: lightblue;";
+            document.getElementById("textarea").value = elem;
             document.getElementById("Y").innerText = elem.toString()
         } else {
-            document.getElementById("textarea").style = "background-color: lightgrey;"
+            document.getElementById("textarea").style = "background-color: lightgrey;";
             document.getElementById("Y").innerText = "?";
         }
     }

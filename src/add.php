@@ -1,13 +1,29 @@
 <?php
 session_start();
 $time = microtime(true);
-$x = (int)$_GET['X'];
-$y = (double)$_GET['textarea'];
-$r = (int)$_GET['R'];
-if(is_nan($x) || is_nan($y)|| is_nan($r)){
-    $result = "invalid data";
-}else {
-    if(($x>=5 || $x<=-5 )&&($y>5 || $y<-5)&& ($r<1 || $r>5)){
+if(is_numeric(str_replace(",",".",$_GET["X"]))){
+    $x = (float) str_replace(",",".",$_GET["X"]);
+} else {
+    $y = $_GET["X"];
+}
+if(is_numeric(str_replace(",",".",$_GET["textarea"]))){
+    $y = (float)str_replace(",",".",$_GET["textarea"]);
+} else {
+    $y = $_GET["textarea"];
+}
+if(is_numeric(str_replace(",",".",$_GET["R"]))){
+    $r = (float) str_replace(",",".",$_GET["R"]);
+} else {
+    $y = $_GET["R"];
+}
+if($x == (int) $x){
+    $x = (int)$x;
+}
+if($r == (int) $r ){
+    $r = (int) $r;
+}
+if(is_numeric($x) & is_numeric($y) & is_numeric($r) & is_int($x) & is_int($r)){
+    if(($x>=5 || $x<=-5 )||($y>5 || $y<-5)||($r<1 || $r>5)){
         $result="data is out of range";
     } else {
         if ((($x <= $r / 2 && $y <= $r) && ($x >= 0 && $y >= 0)) || ($x * $x + $y * $y <= ($r / 2)
@@ -17,6 +33,8 @@ if(is_nan($x) || is_nan($y)|| is_nan($r)){
             $result = "false";
         }
     }
+}else {
+    $result = "invalid data";
 }
 $array = array(
     "x" => $x,

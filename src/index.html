@@ -26,7 +26,6 @@
             margin-right: 10%;
             border: 3px solid grey;
             border-radius: 50px;
-
         }
         select{
             box-shadow: 0 0 2px 1px grey;
@@ -84,7 +83,7 @@
 <script type="text/javascript" src="JSscript.js"></script>
 <header>Окишор Александр. Группа Р3200. Вариант 200016.</header>
 <main>
-    <form action="add.php" method="get">
+    <form action="add.php" target="_self" method="get" name="fun">
         <div class="function" ><p>Область определения функции</p>
             <p><img src="вырезать.png"></p>
             <p>Координата X</p>
@@ -113,7 +112,6 @@
             <button type="button" onclick="set5()" name="button5" id="button5" value="5">5</button>
             <textarea name="R" id="R" cols="1" rows="1" maxlength="1" hidden readonly>?</textarea>
             <p><input type="button" id="accept" onclick="textAreaCheck()" value="Применить"></p>
-
         </div>
     </form>
 </main>
