@@ -101,7 +101,7 @@
                 </select>
             </p>
             <p>Координата Y</p>
-            <label for="textarea"></label><input type="text" placeholder="-5...5" name="textarea" id="textarea" onchange="textAreaHandler()">
+            <label for="textarea"></label><input type="text" placeholder="-5...5" name="textarea" id="textarea" onchange="textAreaHandler()" onkeydown="if(event.keyCode==13){return false;}">
             <p>Значение Y:</p>
             <p id="Y">?</p>
             <p>Координата R</p>
