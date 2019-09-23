@@ -2,9 +2,9 @@
 session_start();
 $time = microtime(true);
 if(is_numeric(str_replace(",",".",$_GET["X"]))){
-    $x = (float) str_replace(",",".",$_GET["X"]);
+    $x = (float)str_replace(",", ".", $_GET["X"]);
 } else {
-    $y = $_GET["X"];
+    $x = $_GET["X"];
 }
 if(is_numeric(str_replace(",",".",$_GET["textarea"]))){
     $y = (float)str_replace(",",".",$_GET["textarea"]);
@@ -14,7 +14,7 @@ if(is_numeric(str_replace(",",".",$_GET["textarea"]))){
 if(is_numeric(str_replace(",",".",$_GET["R"]))){
     $r = (float) str_replace(",",".",$_GET["R"]);
 } else {
-    $y = $_GET["R"];
+    $r = $_GET["R"];
 }
 if($x == (int) $x){
     $x = (int)$x;
